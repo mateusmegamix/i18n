@@ -1,0 +1,9 @@
+{
+    "home": {
+      "welcome": "Hello Word!"
+    },
+    "language": {
+      "english": "English",
+      "portuguese": "Portuguese"
+    }
+  }

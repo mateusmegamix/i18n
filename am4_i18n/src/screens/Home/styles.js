@@ -3,6 +3,8 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
       },
 //======================================
     item: {
@@ -30,11 +32,22 @@ const styles = StyleSheet.create({
 //=======================================
 
     container: {
-        flex: 8,
         justifyContent: 'center',
         alignItems: 'center'
     },
+    pickerContainer: {
+        borderWidth: 1,
+        borderColor: "blue",
+        borderRadius: 5,
+        marginBottom: 0
+      },
+      picker: {
+        marginVertical: 10, 
+        height: 30, 
+        width: 200
+      },
     bemVindo: {
+        marginTop: 150,
         fontSize: 28,
         fontWeight: 'bold',
     },

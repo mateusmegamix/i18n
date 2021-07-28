@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component, useCallback} from 'react';
 import {
   SafeAreaView, 
   View, 
   Text, 
   TouchableOpacity,
+  Picker
 } from 'react-native';
 import styles from './styles';
 
@@ -14,14 +15,29 @@ import i18n from '../../locales';
 
 console.disableYellowBox = true;
 
-function Home() {
+class Home extends Component {
 
   //const {t} = useTranslation('home');
+
+state = {idioma: ''}
+updateIdioma = (idioma) => {
+  this.setState({ idioma: idioma })
+}
+
+render () {
 
   return (
 
     <SafeAreaView style={styles.safeArea}>
       {/* <Language /> */}
+      <View style={styles.pickerContainer}>
+      <Picker style={styles.picker} selectedValue = {this.state.idioma} onValueChange = {this.updateIdioma}>
+          <Picker.Item style={{color: '#ccc'}} label = "Selecione o Idioma"/>
+          <Picker.Item label = "Português" value = "Português" />
+          <Picker.Item label = "Inglês" value = "Inglês"/>
+          <Picker.Item label = "Espanhol" value = "Espanhol" />
+      </Picker>
+      </View>
        <View style={styles.container}>
         <Text style={styles.bemVindo}>{('welcome')}</Text>
       <View>
@@ -37,6 +53,6 @@ function Home() {
     </SafeAreaView>
   );
 
-}
+}}
 
-export default React.memo(Home);
+export default Home;

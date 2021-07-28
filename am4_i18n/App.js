@@ -9,7 +9,7 @@ console.disableYellowBox = true;
 const App = () => {
   return (
     <Fragment>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light"/>
       <Suspense fallback={<ActivityIndicator />}>
         <Home />
       </Suspense>

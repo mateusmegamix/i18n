@@ -4,7 +4,8 @@ const styles = StyleSheet.create({
     safeArea: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF'
       },
 //======================================
     item: {
@@ -32,12 +33,13 @@ const styles = StyleSheet.create({
 //=======================================
 
     container: {
+        backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center'
     },
     pickerContainer: {
         borderWidth: Platform.OS === 'ios' ? 0 : 1,
-        //borderColor: Platform.OS === 'ios' ? "" : "blue",
+        borderColor: Platform.OS === 'ios' ? "" : "blue",
         borderRadius: Platform.OS === 'ios' ? 0 : 5,
       },
       picker: {
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
         width: Platform.OS === 'ios' ? 250 : 200
       },
     bemVindo: {
-        marginTop: 250,
+        marginTop: Platform.OS === 'ios' ? 250 : 200,
         fontSize: 28,
         fontWeight: 'bold',
     },

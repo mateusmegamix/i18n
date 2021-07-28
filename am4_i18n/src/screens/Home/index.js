@@ -13,9 +13,26 @@ import Language from '../Language'
 import {useTranslation} from 'react-i18next';
 import i18n from '../../locales';
 
+import { NavigationActions } from "react-navigation";
+
+
+
 console.disableYellowBox = true;
 
 class Home extends Component {
+
+constructor(props) {
+  super(props);
+  this.handleBack = this.handleBack.bind(this);
+}
+
+handleBack() {
+  const navAction = NavigationActions.close();
+    
+  this.props.navigation.dispatch(navAction);
+  return true;
+}
+
 
   //const {t} = useTranslation('home');
 
@@ -39,14 +56,29 @@ render () {
       </Picker>
       </View>
        <View style={styles.container}>
-        <Text style={styles.bemVindo}>{('welcome')}</Text>
+
+        {
+          this.state.idioma === 'Espanhol' ?
+          ( <Text style={styles.bemVindo}>Hola Mundo!</Text> )
+
+         : 
+          this.state.idioma === 'Inglês' ?
+          <Text style={styles.bemVindo}>Hello World!</Text>
+          
+          ||
+          this.state.idioma === 'Português' :
+
+         <Text style={styles.bemVindo}>Olá Mundo!</Text>
+
+        }
+
       <View>
       <View style={styles.linguaContainer}>
-        <Text style={styles.linguagem}>Lígua: </Text>
-        <Text style={styles.textLingua}>idioma</Text>
+        <Text style={styles.linguagem}>Língua: </Text>
+        <Text style={styles.textLingua}>{this.state.idioma}</Text>
       </View>
       </View>
-        <TouchableOpacity activeOpacity={0.7} style={styles.buttonContainer}>
+        <TouchableOpacity onPress={this.handleBack} activeOpacity={0.7} style={styles.buttonContainer}>
           <Text style={styles.textButton}>Fechar</Text>
         </TouchableOpacity>
       </View>

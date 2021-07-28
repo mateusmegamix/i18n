@@ -1,7 +1,6 @@
 import React, {Fragment, Suspense} from 'react';
 import {StatusBar, ActivityIndicator} from 'react-native';
 import Home from './src/screens/Home';
-//import AppContainer from './src/navigation'
 import './src/locales';
 
 console.disableYellowBox = true;
@@ -9,7 +8,6 @@ console.disableYellowBox = true;
 const App = () => {
   return (
     <Fragment>
-      <StatusBar barStyle="light"/>
       <Suspense fallback={<ActivityIndicator />}>
         <Home />
       </Suspense>

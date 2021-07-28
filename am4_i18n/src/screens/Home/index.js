@@ -49,10 +49,10 @@ render () {
       {/* <Language /> */}
       <View style={styles.pickerContainer}>
       <Picker style={styles.picker} selectedValue = {this.state.idioma} onValueChange = {this.updateIdioma}>
-          <Picker.Item style={{color: '#ccc'}} label = "Selecione o Idioma"/>
-          <Picker.Item label = "Português" value = "Português" />
-          <Picker.Item label = "Inglês" value = "Inglês"/>
-          <Picker.Item label = "Espanhol" value = "Espanhol" />
+          <Picker.Item color="#0000FF" label = "Selecione o Idioma"/>
+          <Picker.Item color="#000000" label = "Português" value = "Português" />
+          <Picker.Item color="#000000" label = "Inglês" value = "Inglês"/>
+          <Picker.Item color="#000000" label = "Espanhol" value = "Espanhol" />
       </Picker>
       </View>
        <View style={styles.container}>
@@ -74,7 +74,20 @@ render () {
 
       <View>
       <View style={styles.linguaContainer}>
-        <Text style={styles.linguagem}>Língua: </Text>
+      {
+          this.state.idioma === 'Espanhol' ?
+          ( <Text style={styles.linguagem}>Lengua: </Text> )
+
+         : 
+          this.state.idioma === 'Inglês' ?
+          <Text style={styles.linguagem}>Tongle: </Text>
+          
+          ||
+          this.state.idioma === 'Português' :
+
+         <Text style={styles.linguagem}>Língua: </Text>
+
+        }
         <Text style={styles.textLingua}>{this.state.idioma}</Text>
       </View>
       </View>

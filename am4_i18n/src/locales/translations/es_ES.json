@@ -1,6 +1,7 @@
 {
     "home": {
-      "welcome": "Hola Mundo!"
+      "welcome": "Hola Mundo!",
+      "tongle": "Lengua:"
     },
     "language": {
       "english": "Inglés",

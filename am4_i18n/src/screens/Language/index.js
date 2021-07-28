@@ -11,13 +11,13 @@ import styles from './styles';
 import {useTranslation} from 'react-i18next';
 
 function Language() {
-  //const {t, i18n} = useTranslation('language');
+  const {t, i18n} = useTranslation('language');
 
-  // const languages = useMemo(() => {
-  //    return [    {name: t('portuguese'), id: 'pt-BR'},
-  //      {name: t('english'), id: 'en-US'},
-  //    ];
-  // }, [i18n.language]);
+  const languages = useMemo(() => {
+      return [    {name: t('portuguese'), id: 'pt-BR'},
+        {name: t('english'), id: 'en-US'},
+      ];
+   }, [i18n.language]);
 
   const onPressLanguage = useCallback(language => {
     i18n.changeLanguage(language);
@@ -29,7 +29,7 @@ function Language() {
       <View style={styles.item}>
         <View style={styles.nameContainer}>
           <TouchableOpacity onPress={() => onPressLanguage(item.id)}>
-            {/* <Text style={styles.languageName}>{item.name}</Text> */}
+            <Text style={styles.languageName}>{item.name}</Text>
           </TouchableOpacity>
         </View>
         {isSelected ? <View style={styles.selected} /> : null}
@@ -40,13 +40,13 @@ function Language() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <Text>Texto</Text>
-      {/* {<FlatList
+       {<FlatList
         style={styles.list}
         data={languages}
         key={(item, index) => String(index)}
         renderItem={renderItem}
       />}
-      <Text>{('language')}</Text> */}
+      <Text>{('language')}</Text>
     </SafeAreaView>
   );
 }

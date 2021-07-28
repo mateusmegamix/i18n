@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     selected: {
-        backgroundColor: '#000090',
+        backgroundColor: '#0000FF',
         height: 30,
         width: 30,
         borderRadius: 15,
@@ -33,16 +33,16 @@ const styles = StyleSheet.create({
 //=======================================
 
     container: {
-        backgroundColor: '#FFFFFF',
         justifyContent: 'center',
         alignItems: 'center'
     },
     pickerContainer: {
         borderWidth: Platform.OS === 'ios' ? 0 : 1,
-        borderColor: Platform.OS === 'ios' ? "" : "blue",
+        borderColor: Platform.OS === 'ios' ? "#FFFFFF" : "#0000FF",
         borderRadius: Platform.OS === 'ios' ? 0 : 5,
       },
       picker: {
+        color: "#282828",
         marginVertical: Platform.OS === 'ios' ? 0 : 10, 
         height: Platform.OS === 'ios' ? 30 : 30, 
         width: Platform.OS === 'ios' ? 250 : 200
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     buttonContainer: {
-        backgroundColor: "#000",
+        backgroundColor: "#000000",
         height: 40,
         width: 100,
         justifyContent: 'center',
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         marginTop: 100
     },
     textButton: {
-        color: "#FFF",
+        color: "#FFFFFF",
         fontWeight: 'bold',
         fontSize: 20,
     },

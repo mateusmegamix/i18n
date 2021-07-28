@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 const styles = StyleSheet.create({
     safeArea: {
@@ -36,18 +36,17 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     pickerContainer: {
-        borderWidth: 1,
-        borderColor: "blue",
-        borderRadius: 5,
-        marginBottom: 0
+        borderWidth: Platform.OS === 'ios' ? 0 : 1,
+        //borderColor: Platform.OS === 'ios' ? "" : "blue",
+        borderRadius: Platform.OS === 'ios' ? 0 : 5,
       },
       picker: {
-        marginVertical: 10, 
-        height: 30, 
-        width: 200
+        marginVertical: Platform.OS === 'ios' ? 0 : 10, 
+        height: Platform.OS === 'ios' ? 30 : 30, 
+        width: Platform.OS === 'ios' ? 250 : 200
       },
     bemVindo: {
-        marginTop: 150,
+        marginTop: 250,
         fontSize: 28,
         fontWeight: 'bold',
     },
